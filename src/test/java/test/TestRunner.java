@@ -3,7 +3,7 @@ package test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,8 +16,8 @@ public class TestRunner {
 	@BeforeTest
 	public void before() {
 
-		System.setProperty("webdriver.edge.driver", "E:\\Job Stuff\\TestngMAven\\src\\test\\resources\\MicrosoftWebDriver.exe");
-		driver = new EdgeDriver();
+		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\src\\test\\resources\\chromedriver.exe");
+		driver = new ChromeDriver();
 	}
 	@Test
 	public void Scenario1() {

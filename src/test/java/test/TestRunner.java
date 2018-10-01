@@ -1,5 +1,7 @@
 package test;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +17,9 @@ public class TestRunner {
 
 	@BeforeTest
 	public void before() {
-
-		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\src\\test\\resources\\chromedriver.exe");
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath().toString());
 		driver = new ChromeDriver();
 	}
 	@Test
@@ -28,7 +31,7 @@ public class TestRunner {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"s2id_autogen8\"]/a/span[1]"));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
@@ -36,7 +39,7 @@ public class TestRunner {
 		actions.sendKeys("SOME DATA");
 		actions.build().perform();
 	}
-	
+
 	@AfterTest
 	public void after() {
 		driver.close();

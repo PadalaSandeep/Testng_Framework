@@ -17,9 +17,8 @@ public class TestRunner {
 
 	@BeforeTest
 	public void before() {
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
-		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath().toString());
+
+		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\src\\test\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	@Test

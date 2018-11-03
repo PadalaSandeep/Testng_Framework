@@ -18,6 +18,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>TestRun.xml</suiteXmlFile>
                         <suiteXmlFile>GroupsRun.xml</suiteXmlFile>
+                        <suiteXmlFile>Parallel.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

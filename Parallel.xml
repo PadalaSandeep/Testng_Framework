@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+
+<suite thread-count="2" verbose="2" name="Parallel" annotations="JDK" parallel="tests">
+         
+  <test name="Scenario1">
+	 <classes>
+	   <class name="test.TestRunner"/>
+	 </classes>
+   </test>
+   
+  <test name="Scenario2">
+     <classes>
+       <class name="test.TestRunner"/>
+     </classes>
+   </test>
+</suite>

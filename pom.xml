@@ -17,6 +17,7 @@
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
                         <suiteXmlFile>TestRun.xml</suiteXmlFile>
+                        <suiteXmlFile>GroupsRun.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

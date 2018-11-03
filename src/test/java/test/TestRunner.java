@@ -1,7 +1,6 @@
 package test;
 
 import java.io.File;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,8 +16,10 @@ public class TestRunner {
 
 	@BeforeTest
 	public void before() {
-
-		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\src\\test\\resources\\chromedriver.exe");
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
+		System.out.println(file.getAbsolutePath());
+		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\target\\test-classes\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	@Test
@@ -27,13 +28,14 @@ public class TestRunner {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
-
-		WebElement element = driver.findElement(By.xpath("//*[@id=\"s2id_autogen8\"]/a/span[1]"));
+		
+		WebElement element1 = driver.findElement(By.xpath("//*[@class='select2-chosen']"));
+		
 		Actions actions = new Actions(driver);
-		actions.moveToElement(element);
+		actions.moveToElement(element1);
 		actions.click();
 		actions.sendKeys("SOME DATA");
 		actions.build().perform();

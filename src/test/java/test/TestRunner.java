@@ -1,25 +1,25 @@
 package test;
 
-import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestRunner {
 
 	WebDriver driver;
 
-	@BeforeTest
+	@BeforeMethod
 	public void before() {
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("chromedriver.exe").getFile());
-		System.out.println(file.getAbsolutePath());
-		System.setProperty("webdriver.chrome.driver", "E:\\Job Stuff\\TestngMAven\\target\\test-classes\\chromedriver.exe");
+		
+		WebDriverManager.chromedriver().setup();
+		
 		driver = new ChromeDriver();
 	}
 	@Test
@@ -41,7 +41,7 @@ public class TestRunner {
 		actions.build().perform();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void after() {
 		driver.close();
 	}

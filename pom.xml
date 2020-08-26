@@ -17,8 +17,6 @@
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
                         <suiteXmlFile>TestRun.xml</suiteXmlFile>
-                        <suiteXmlFile>GroupsRun.xml</suiteXmlFile>
-                        <suiteXmlFile>Parallel.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -42,6 +40,13 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.14.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>4.1.0</version>
+</dependency>
+		
 
 		<dependency>
 			<groupId>org.testng</groupId>
